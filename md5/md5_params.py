@@ -45,8 +45,6 @@ def left_rotate(x, amount):
 # In[67]:
 
 
-functions = 16*[lambda b, c, d: (b & ~d) | (~b & c)] +             16*[lambda b, c, d: (c ^ b) | (~d & c)] +             16*[lambda b, c, d: (b & c) | (d ^ d)] +             16*[lambda b, c, d: ~d & (b | ~c)]
-
 
 # In[68]:
 
