@@ -4,7 +4,7 @@
 # In[1]:
 
 
-ALGORITHM = {
+algorithm = {
     
     '1.2.840.10040.4.1': 'DSA',
     "1.2.840.10040.4.3" : "sha1DSA",
@@ -17,7 +17,7 @@ ALGORITHM = {
     '1.2.840.113549.1.1.13': 'sha512RSA',
      '1.2.840.113549.1.1.11':'sha256RSA'
 }
-RDN = {
+places = {
     "2.5.4.6" : "Country: ",
     "2.5.4.8" : "Sate or province name: ",
     "2.5.4.7" : "Locality: ",
@@ -25,7 +25,7 @@ RDN = {
     "2.5.4.11" : "Organizational Unit name: ",
     "2.5.4.3" : "Common Name: "
 }
-TYPE = {
+types = {
     1:'BOOL',
     2:'INT',
     3:'Bit String',
@@ -39,7 +39,7 @@ TYPE = {
     0x31:'Constructor'
 }
 
-INTEGEER = {
+ints = {
     0: 'VERSION: ',
     1: 'default version: ',
     2: 'SERIAL NUMBER: ',
@@ -47,18 +47,18 @@ INTEGEER = {
     4: '    args needed in CERTIFICATE ALGORITHM: '
 }
 
-BITSTRING = {
+bits = {
     0: '    Subject Public Key: \n   ',
     1: 'Certificate Signature: \n   '
 }
 
-PRINTABLE = {
+printables = {
     0: 'PRINTABLE: ',
     1: 'PRINTABLE version: ',
     2: 'PRINTABLE NUMBER: '
 }
 
-OBJECT = {
+objects = {
     0:'SIGNATURE ALGORITHM: ',
     1:'ISSUER: ',
     2:'SUBJECT: ',
@@ -66,19 +66,19 @@ OBJECT = {
     4:'Certificate Signature Algorithm: : '
 }
 
-NULL = {
+nulls = {
     0: '    args needed in SIGNATURE ALGORITHM: ',
     1: '    args needed in PUBLIC KEY ALGORITHM: ',
     2: '    args needed in CERTIFICATE ALGORITHM: '
 }
 
-TIME = {
+times = {
     0: '    not before: ',
     1: '    not after: '
 }
 
 
-VERSION = {
+versions = {
     '0': 'V1',
     '1': 'V2',
     "2": 'V3'

@@ -119,52 +119,52 @@ def show_result(_str):
     global print_count
     if _type == 2:
         #only consider the normal case
-        if count >= len(x509params.INTEGEER):
+        if count >= len(x509params.ints):
             print(_str)
             return
         if count == 0:
-            _str = x509params.VERSION[_str]
-        print(x509params.INTEGEER[count],_str)
+            _str = x509params.versions[_str]
+        print(x509params.ints[count],_str)
         count+=1
     elif _type==3:
-        if bit_count >= len(x509params.BITSTRING):
+        if bit_count >= len(x509params.bits):
             print(_str)
             return
-        print(x509params.BITSTRING[bit_count],_str)
+        print(x509params.bits[bit_count],_str)
         bit_count+=1
     elif _type ==5:
-        if null_count >= len(x509params.NULL):
+        if null_count >= len(x509params.nulls):
             return
-        print(x509params.NULL[null_count],"None")
+        print(x509params.nulls[null_count],"None")
         null_count+=1
         count+=1
     elif _type == 6:
-        if object_count >= len(x509params.OBJECT):
-            if x509params.RDN.get(_str,-1)!= -1:
-                _str = x509params.RDN[_str]
-            elif x509params.ALGORITHM.get(_str,-1)!=-1:
-                _str = x509params.ALGORITHM[_str]
+        if object_count >= len(x509params.objects):
+            if x509params.places.get(_str,-1)!= -1:
+                _str = x509params.places[_str]
+            elif x509params.algorithm.get(_str,-1)!=-1:
+                _str = x509params.algorithm[_str]
             print(_str)
             return
-        if x509params.RDN.get(_str,-1)!=-1:
-            _str = x509params.RDN[_str]
+        if x509params.places.get(_str,-1)!=-1:
+            _str = x509params.places[_str]
             if _str == "Country: ":
-                print(x509params.OBJECT[object_count])
+                print(x509params.objects[object_count])
                 object_count+=1
             follow_object = True
-            print(_str)
-        elif x509params.ALGORITHM.get(_str,-1)!=-1:
-            _str = x509params.ALGORITHM[_str]
-            print(x509params.OBJECT[object_count],_str)
+            print('   ',_str)
+        elif x509params.algorithm.get(_str,-1)!=-1:
+            _str = x509params.algorithm[_str]
+            print(x509params.objects[object_count],_str)
             object_count+=1
     elif _type == 0x17 or _type == 0x18:
         if time_count == -1:
             print("VALIDITY:")
             time_count +=1
-            print(x509params.TIME[time_count],_str)
+            print(x509params.times[time_count],_str)
             time_count+=1
         else:
-            print(x509params.TIME[time_count],_str)
+            print(x509params.times[time_count],_str)
             #time_count+=1
     elif _type == 0x13 or _type == 0x0c:
         if follow_object == False:
